@@ -36,7 +36,7 @@ const Footer = () => {
             {personalInfo.name}
           </a>
 
-          <nav className="flex flex-wrap justify-center space-x-6 mb-6">
+          <nav className="flex flex-wrap justify-center gap-4 mb-6">
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
@@ -65,16 +65,28 @@ const Footer = () => {
           </div>
 
           <div className="text-center text-gray-500 text-sm">
-            <div className="flex items-center justify-center space-x-2 mb-2">
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
               <span>Made with</span>
               <Heart size={16} className="text-red-500" />
               <span>by {personalInfo.name}</span>
-              <span className="mx-2">•</span>
+              <span className="hidden sm:inline mx-2">•</span>
               <span>Powered by React</span>
             </div>
-            <p>
-              © {currentYear} {personalInfo.name}. All rights reserved.
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span>
+                © {currentYear} {personalInfo.name}
+              </span>
+              <span className="hidden sm:inline mx-2">•</span>
+              <a
+                href="https://github.com/standleypg/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 flex items-center"
+              >
+                <SocialIcon platform="GitHub" size={16} />
+                <span className="ml-1">Source Code</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
